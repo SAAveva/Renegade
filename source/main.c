@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
+#include <world.h>
+
 
 SDL_Window* window;
 SDL_Surface* winSurface;
