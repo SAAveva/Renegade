@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <world.h>
-
+#include <physics.h>
+#include <animation.h>
 
 SDL_Window* window;
 SDL_Surface* winSurface;
 SDL_Surface* spritesheet;
+
+world world;
 
 unsigned int init() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {

@@ -40,4 +40,13 @@ typedef struct {
 	bool canCollide;
 }element;
 
+typedef struct {
+	elememt elememts[32];
+	enemy enemies[16];
+	player Player;
+	interactables interactables[8];
+}world;
+
+extern world world;
+
 #endif
