@@ -8,21 +8,25 @@
 typedef struct {
 	animation animations[9];
 	transform transform;
+	knockback knockback;
 	unsigned int hp;
 	unsigned int defense;
 	unsigned int speed;
 	unsigned int power;
 	unsigned int mass;
+	unsigned int cooldown;
 }player;
 
 typedef struct {
 	animation animations[16];
 	transform transform;
+	knockback knockback;
 	unsigned int hp;
 	unsigned int defense;
 	unsigned int speed;
 	unsigned int power;
 	unsigned int mass;
+	unsigned int cooldown;
 	bool canCollide;
 }enemy;
 
@@ -41,12 +45,12 @@ typedef struct {
 }element;
 
 typedef struct {
-	elememt elememts[32];
+	element elements[32];
 	enemy enemies[16];
 	player Player;
-	interactables interactables[8];
+	interactable interactables[8];
 }world;
 
-extern world world;
+extern world World;
 
 #endif

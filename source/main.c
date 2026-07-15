@@ -8,7 +8,7 @@ SDL_Window* window;
 SDL_Surface* winSurface;
 SDL_Surface* spritesheet;
 
-world world;
+world World;
 
 unsigned int init() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
@@ -56,7 +56,12 @@ int main(int argc, char** args) {
 	if (init() || loadSpritesheet()) return 1;
 
 	SDL_FillRect(winSurface, NULL, SDL_MapRGB(winSurface->format, 255, 255, 255));
-	SDL_UpdateWindowSurface(window);
+
+	while(1) {
+		SDL_UpdateWindowSurface(window);
+		physicsUpdatePlayer();
+		physicsUpdateEnemy();
+	}
 
 	killWindow();
 	return 0;

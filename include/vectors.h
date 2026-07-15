@@ -17,6 +17,11 @@ typedef struct {
 }velocity;
 
 typedef struct {
+	float x;
+	float y;
+}knockback;
+
+typedef struct {
 	position position;
 	velocity velocity;
 	scale scale;
