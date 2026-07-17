@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <world.h>
 #include <animation.h>
 
@@ -7,7 +8,7 @@ float gravity = 500.0f;
 float dt = 1/60;
 
 void physicsUpdatePlayer(bool* grounded) {
-	for (int i = 0; i < 32; i++) {
+	for (uint8_t i = 0; i < 32; i++) {
 		float playerHalfWidth = 6.5f;
 		float playerHalfHeight = 14.0f;
 		float objHalfWidth = World.elements[i].transform.scale.width/2.0f;
@@ -36,12 +37,12 @@ void physicsUpdatePlayer(bool* grounded) {
 	World.Player.transform.position.y += World.Player.transform.velocity.y * dt;
 }
 void physicsUpdateEnemy() {
-	for (int i = 0; i < 16; i++) {
+	for (uint8_t i = 0; i < 16; i++) {
 	float enemyHalfWidth = World.enemies[i].transform.scale.width/2.0f;
 	float enemyHalfHeight = World.enemies[i].transform.scale.height/2.0f;
 	float enemyCenterX = World.enemies[i].transform.position.x + enemyHalfWidth;
 	float enemyCenterY = World.enemies[i].transform.position.y + enemyHalfHeight;
-		for (int j = 0; j < 32; j++) {
+		for (uint8_t j = 0; j < 32; j++) {
 			float objHalfWidth = World.elements[j].transform.scale.width/2.0f;
 			float objHalfHeight = World.elements[j].transform.scale.height/2.0f;
 			float objCenterX = World.elements[j].transform.position.x + objHalfWidth;

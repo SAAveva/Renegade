@@ -1,9 +1,10 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
+#include <stdint.h>
 #include <vectors.h>
 
-extern unsigned int animationList[4];
+extern uint8_t animationList[4];
 
 typedef enum {
 	playerIdle = 0
@@ -17,7 +18,7 @@ typedef struct {
 	texture* frames;
 }animation;
 
-void animationConfig(sprite sprite, unsigned int frameCount, animation* animation);
+void animationConfig(sprite sprite, uint8_t frameCount, animation* animation);
 void animationRemove(animation* animation);
 
 #endif

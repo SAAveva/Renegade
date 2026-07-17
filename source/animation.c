@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdint.h>
 #include <vectors.h>
 
 typedef enum {
@@ -13,13 +14,13 @@ typedef struct {
 	texture* frames;
 }animation;
 
-unsigned int animationList[4] = {
+uint8_t animationList[4] = {
 	0, 0, 13, 28
 };
 
-void animationConfig(sprite sprite, unsigned int frameCount, animation* animation) {
-	animation->frames = malloc(frameCount * sizeof(unsigned int));
-	for (int i = 0; i < frameCount; i++) {
+void animationConfig(sprite sprite, uint8_t frameCount, animation* animation) {
+	animation->frames = malloc(frameCount * sizeof(uint8_t));
+	for (uint8_t i = 0; i < frameCount; i++) {
 		animation->frames[i].texCoords.x = animationList[i * 4 + sprite];
 		animation->frames[i].texCoords.y = animationList[i * 4 + 1 + sprite];
 		animation->frames[i].texDimensions.width = animationList[i * 4 + 2 + sprite];
