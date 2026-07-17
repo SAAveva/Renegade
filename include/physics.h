@@ -1,7 +1,9 @@
 #ifndef PHYSICS_H
 #define PHYSICS_H
 
-void physicsUpdatePlayer();
+#include <stdbool.h>
+
+void physicsUpdatePlayer(bool* grounded);
 void physicsUpdateEnemy();
 
 #endif

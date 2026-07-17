@@ -1,11 +1,12 @@
 #include <math.h>
+#include <stdbool.h>
 #include <world.h>
 #include <animation.h>
 
 float gravity = 500.0f;
 float dt = 1/60;
 
-void physicsUpdatePlayer() {
+void physicsUpdatePlayer(bool* grounded) {
 	for (int i = 0; i < 32; i++) {
 		float playerHalfWidth = 6.5f;
 		float playerHalfHeight = 14.0f;
@@ -26,6 +27,7 @@ void physicsUpdatePlayer() {
 				World.Player.transform.position.y += diffy;
 				World.Player.transform.velocity.y = 0.0f;
 				World.Player.transform.velocity.x -= 50.0f * dt;
+				*grounded = true;
 			}
 		}
 	}
