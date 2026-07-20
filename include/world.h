@@ -19,6 +19,7 @@ typedef struct {
 	uint8_t power;
 	uint8_t mass;
 	uint8_t cooldown;
+	bool active;
 }player;
 
 typedef struct {
@@ -35,6 +36,7 @@ typedef struct {
 	uint8_t mass;
 	uint8_t cooldown;
 	bool canCollide;
+	bool active;
 }enemy;
 
 typedef struct {
@@ -44,6 +46,7 @@ typedef struct {
 	uint8_t frameClock;
 	uint8_t animationPlaying;
 	bool canCollide;
+	bool active;
 }interactable;
 
 typedef struct {
@@ -54,6 +57,7 @@ typedef struct {
 	uint8_t mass;
 	bool anchored;
 	bool canCollide;
+	bool active;
 }element;
 
 typedef struct {
