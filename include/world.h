@@ -1,5 +1,4 @@
-#ifndef WORLD_H
-#define WORLD_H
+#pragma once
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -68,5 +67,3 @@ typedef struct {
 }world;
 
 extern world World;
-
-#endif

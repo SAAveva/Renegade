@@ -1,5 +1,4 @@
-#ifndef VECTORS_H
-#define VECTORS_H
+#pragma once
 
 typedef struct {
 	float x;
@@ -26,5 +25,3 @@ typedef struct {
 	velocity velocity;
 	scale scale;
 }transform;
-
-#endif
