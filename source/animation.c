@@ -1,22 +1,26 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include <SDL2/SDL.h>
 #include <vectors.h>
 #include <world.h>
 #include <animation.h>
 
-uint8_t animationList[4] = {
-	0, 0, 13, 28
-};
-
 void animationConfig(sprite sprite, uint8_t frameCount, animation* animation) {
+	FILE* animations;
+	animations = fopen("data/animations.bin", "rb");
+
 	animation->frames = malloc(frameCount * sizeof(uint8_t));
 	for (uint8_t i = 0; i < frameCount; i++) {
-		animation->frames[i].texCoords.x = animationList[i * 4 + sprite];
-		animation->frames[i].texCoords.y = animationList[i * 4 + 1 + sprite];
-		animation->frames[i].texDimensions.width = animationList[i * 4 + 2 + sprite];
-		animation->frames[i].texDimensions.height = animationList[i * 4 + 3 + sprite];
+		fseek(animations, sizeof(uint8_t) * sprite, SEEK_SET);
+
+		fread(&animation->frames[i].texCoords.x, sizeof(uint8_t), 1, animations);
+		fread(&animation->frames[i].texCoords.y, sizeof(uint8_t), 1, animations);
+		fread(&animation->frames[i].texDimensions.width, sizeof(uint8_t), 1, animations);
+		fread(&animation->frames[i].texDimensions.height, sizeof(uint8_t), 1, animations);
 	}
+	fclose(animations);
 }
 void animationRemove(animation* animation) {
 	free(&(animation->frames));

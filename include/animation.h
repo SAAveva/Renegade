@@ -5,8 +5,6 @@
 #include <SDL2/SDL.h>
 #include <vectors.h>
 
-extern uint8_t animationList[4];
-
 typedef enum {
 	playerIdle = 0
 }sprite;
