@@ -37,7 +37,7 @@ bool init() {
 	World.Player.transform.position.y = 0.0f;
 	World.Player.transform.velocity.x = 0.0f;
 	World.Player.transform.velocity.y = 0.0f;
-	animationConfig(playerIdle, 1, World.Player.animations[0]);
+	animationConfig(playerIdle, 1, &World.Player.animations[0]);
 	World.Player.animationPlaying = 0;
 	World.Player.active = true;
 
@@ -78,7 +78,7 @@ int main(int argc, char** args) {
 
 	if (!(init() || loadSpritesheet())) return 1;
 
-	SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF);
+	SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 	SDL_RenderClear(renderer);
 
 	SDL_Event eventHandler;

@@ -3,18 +3,7 @@
 #include <SDL2/SDL.h>
 #include <vectors.h>
 #include <world.h>
-
-typedef enum {
-	playerIdle = 0
-}sprite;
-
-typedef struct {
-	position texCoords;
-	scale texDimensions;
-}texture;
-typedef struct {
-	texture* frames;
-}animation;
+#include <animation.h>
 
 uint8_t animationList[4] = {
 	0, 0, 13, 28
@@ -81,10 +70,10 @@ void playAnimations(SDL_Renderer* renderer, SDL_Texture* spritesheet) {
 				World.elements[i].transform.scale.height
 			};
 			SDL_Rect clip = {
-				World.elements[i].animations[World.elements[i].animationPlaying].frames[World.elements[i].frameClock].texCoords.x,
-				World.elements[i].animations[World.elements[i].animationPlaying].frames[World.elements[i].frameClock].texCoords.y,
-				World.elements[i].animations[World.elements[i].animationPlaying].frames[World.elements[i].frameClock].texDimensions.width,
-				World.elements[i].animations[World.elements[i].animationPlaying].frames[World.elements[i].frameClock].texDimensions.height
+				World.elements[i].animation.frames[World.elements[i].frameClock].texCoords.x,
+				World.elements[i].animation.frames[World.elements[i].frameClock].texCoords.y,
+				World.elements[i].animation.frames[World.elements[i].frameClock].texDimensions.width,
+				World.elements[i].animation.frames[World.elements[i].frameClock].texDimensions.height
 			};
 
 			SDL_RenderCopy(renderer, spritesheet, &clip, &renderQuad);

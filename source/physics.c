@@ -34,7 +34,7 @@ void physicsUpdatePlayer(bool* grounded) {
 	}
 	World.Player.transform.position.x += World.Player.transform.velocity.x * dt;
 	World.Player.transform.velocity.y -= gravity * dt;
-	World.Player.transform.position.y += World.Player.transform.velocity.y * dt;
+//	World.Player.transform.position.y += World.Player.transform.velocity.y * dt;
 }
 void physicsUpdateEnemy() {
 	for (uint8_t i = 0; i < 16; i++) {
