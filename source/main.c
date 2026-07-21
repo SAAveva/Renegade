@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
-#include <world.h>
-#include <physics.h>
-#include <animation.h>
-#include <input.h>
+
+#include "../include/world.h"
+#include "../include/physics.h"
+#include "../include/animation.h"
+#include "../include/input.h"
+#include "../include/game.h"
 
 SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
@@ -15,7 +17,7 @@ world World;
 bool grounded = false;
 bool quit = false;
 
-bool init() {
+bool gameInit() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		printf("error initializing sdl: %s\n", SDL_GetError());
 		return false;
@@ -40,6 +42,8 @@ bool init() {
 	animationConfig(playerIdle, 1, &World.Player.animations[0]);
 	World.Player.animationPlaying = 0;
 	World.Player.active = true;
+
+	loadSpritesheet();
 
 	return true;
 }
@@ -76,7 +80,10 @@ int main(int argc, char** args) {
 	(void) argc;
 	(void) args;
 
-	if (!(init() || loadSpritesheet())) return 1;
+	if (!gameInit()) {
+		fprintf(stderr, "Game couldn't initalize\n");
+		return 1;
+	}
 
 	SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 	SDL_RenderClear(renderer);
