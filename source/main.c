@@ -35,11 +35,11 @@ bool gameInit() {
 		return false;
 	}
 
-	World.Player.transform.position.x = 0.0f;
-	World.Player.transform.position.y = 0.0f;
-	World.Player.transform.velocity.x = 0.0f;
-	World.Player.transform.velocity.y = 0.0f;
+	World.Player.transform.position = (position) { .x = 0.0, .y = 0.0 };
+	World.Player.transform.velocity = (velocity) { .x = 0.0, .y = 0.0 };
+
 	animationConfig(playerIdle, 1, &World.Player.animations[0]);
+
 	World.Player.animationPlaying = 0;
 	World.Player.active = true;
 
