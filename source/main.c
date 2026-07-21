@@ -76,10 +76,6 @@ void killWindow() {
 }
 
 int main(int argc, char** args) {
-
-	(void) argc;
-	(void) args;
-
 	if (!gameInit()) {
 		fprintf(stderr, "Game couldn't initalize\n");
 		return 1;
