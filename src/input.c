@@ -1,7 +1,8 @@
 #include <stdbool.h>
 #include <SDL2/SDL.h>
-#include <world.h>
-#include <physics.h>
+
+#include "world.h"
+#include "physics.h"
 
 void processInput(SDL_Event eventHandler, bool* quit, bool* grounded) {
 	switch (eventHandler.type) {

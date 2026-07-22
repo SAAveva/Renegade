@@ -1,8 +1,9 @@
 #include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include <world.h>
-#include <animation.h>
+
+#include "world.h"
+#include "animation.h"
 
 float gravity = 500.0f;
 float dt = 1/60;

@@ -2,8 +2,9 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include <vectors.h>
-#include <animation.h>
+
+#include "vectors.h"
+#include "animation.h"
 
 typedef struct {
 	animation animations[9];

@@ -2,7 +2,8 @@
 
 #include <stdint.h>
 #include <SDL2/SDL.h>
-#include <vectors.h>
+
+#include "vectors.h"
 
 typedef enum {
 	playerIdle = 0

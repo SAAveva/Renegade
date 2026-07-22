@@ -3,9 +3,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
-#include <vectors.h>
-#include <world.h>
-#include <animation.h>
+
+#include "vectors.h"
+#include "world.h"
+#include "animation.h"
 
 void animationConfig(sprite sprite, uint8_t frameCount, animation* animation) {
 	FILE* animations;

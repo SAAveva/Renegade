@@ -2,11 +2,11 @@
 #include <stdbool.h>
 #include <SDL2/SDL.h>
 
-#include "../include/world.h"
-#include "../include/physics.h"
-#include "../include/animation.h"
-#include "../include/input.h"
-#include "../include/game.h"
+#include "world.h"
+#include "physics.h"
+#include "animation.h"
+#include "input.h"
+#include "game.h"
 
 SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
