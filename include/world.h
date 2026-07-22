@@ -7,8 +7,8 @@
 
 typedef struct {
 	animation animations[9];
-	transform transform;
-	knockback knockback;
+	Transform transform;
+	Vec knockback;
 	uint8_t frameCount;
 	uint8_t frameClock;
 	uint8_t animationPlaying;
@@ -23,8 +23,8 @@ typedef struct {
 
 typedef struct {
 	animation animations[16];
-	transform transform;
-	knockback knockback;
+	Transform transform;
+	Vec knockback;
 	uint8_t frameCount;
 	uint8_t frameClock;
 	uint8_t animationPlaying;
@@ -40,7 +40,7 @@ typedef struct {
 
 typedef struct {
 	animation animations[3];
-	transform transform;
+	Transform transform;
 	uint8_t frameCount;
 	uint8_t frameClock;
 	uint8_t animationPlaying;
@@ -50,7 +50,7 @@ typedef struct {
 
 typedef struct {
 	animation animation;
-	transform transform;
+	Transform transform;
 	uint8_t frameCount;
 	uint8_t frameClock;
 	uint8_t mass;

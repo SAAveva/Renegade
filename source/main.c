@@ -35,8 +35,8 @@ bool gameInit() {
 		return false;
 	}
 
-	World.Player.transform.position = (position) { .x = 0.0, .y = 0.0 };
-	World.Player.transform.velocity = (velocity) { .x = 0.0, .y = 0.0 };
+	World.Player.transform.position = (Vec) { .x = 0.0, .y = 0.0 };
+	World.Player.transform.velocity = (Vec) { .x = 0.0, .y = 0.0 };
 
 	animationConfig(playerIdle, 1, &World.Player.animations[0]);
 

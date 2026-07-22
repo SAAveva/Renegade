@@ -9,8 +9,8 @@ typedef enum {
 }sprite;
 
 typedef struct {
-	position texCoords;
-	scale texDimensions;
+	Vec texCoords;
+	Vec texDimensions;
 }texture;
 typedef struct {
 	texture* frames;

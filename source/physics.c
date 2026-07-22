@@ -11,8 +11,8 @@ void physicsUpdatePlayer(bool* grounded) {
 	for (uint8_t i = 0; i < 32; i++) {
 		float playerHalfWidth = 6.5f;
 		float playerHalfHeight = 14.0f;
-		float objHalfWidth = World.elements[i].transform.scale.width/2.0f;
-		float objHalfHeight = World.elements[i].transform.scale.height/2.0f;
+		float objHalfWidth = World.elements[i].transform.scale.x/2.0f;
+		float objHalfHeight = World.elements[i].transform.scale.y/2.0f;
 		float playerCenterX = World.Player.transform.position.x + playerHalfWidth;
 		float playerCenterY = World.Player.transform.position.y + playerHalfHeight;
 		float objCenterX = World.elements[i].transform.position.x + objHalfWidth;
@@ -38,13 +38,13 @@ void physicsUpdatePlayer(bool* grounded) {
 }
 void physicsUpdateEnemy() {
 	for (uint8_t i = 0; i < 16; i++) {
-	float enemyHalfWidth = World.enemies[i].transform.scale.width/2.0f;
-	float enemyHalfHeight = World.enemies[i].transform.scale.height/2.0f;
+	float enemyHalfWidth = World.enemies[i].transform.scale.x/2.0f;
+	float enemyHalfHeight = World.enemies[i].transform.scale.y/2.0f;
 	float enemyCenterX = World.enemies[i].transform.position.x + enemyHalfWidth;
 	float enemyCenterY = World.enemies[i].transform.position.y + enemyHalfHeight;
 		for (uint8_t j = 0; j < 32; j++) {
-			float objHalfWidth = World.elements[j].transform.scale.width/2.0f;
-			float objHalfHeight = World.elements[j].transform.scale.height/2.0f;
+			float objHalfWidth = World.elements[j].transform.scale.x/2.0f;
+			float objHalfHeight = World.elements[j].transform.scale.y/2.0f;
 			float objCenterX = World.elements[j].transform.position.x + objHalfWidth;
 			float objCenterY = World.elements[j].transform.position.y + objHalfHeight;
 			float diffx = enemyCenterX - objCenterX;
